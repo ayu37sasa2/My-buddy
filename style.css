@@ -1,0 +1,395 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------
+見出し写真
+---------------------------------------------------- */
+.fstimg {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+
+    transition: all 3s;
+    /* 50%上に配置 */
+    transform: translateY(-50%);
+}
+
+.fstimg img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* 真ん中より少ししたを機転にズーム */
+    object-position: center 65%;
+}
+
+.fstimg.appear {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ---------------------------------
+header
+--------------------------------- */
+header {
+    background-color: rgb(91, 166, 196);
+
+    transform: translateX(-100%);
+    opacity: 0;
+    /* すべての変化を1秒でなめらかにする */
+    transition: all 1s ease;
+}
+
+header h1 {
+    padding: 40px;
+    text-align: center;
+    font-size: 54px;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    /* 文字間を少し広げるとかっこいい */
+    letter-spacing: 4px;
+    /* 全部大文字で力強く */
+    text-transform: uppercase;
+    /* 影をつけて立体感 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 1s ease;
+    /* ヘッダーが出た後に0.5秒遅れてアニメーション開始 */
+    transition-delay: 0.5s;
+}
+
+/* .showクラスをつけたときにアニメーション */
+header.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+header.show h1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* --------------------------------------
+main
+-------------------------------------- */
+.Introduction {
+    max-width: 1400px;
+    background-color: aliceblue;
+    margin: 60px auto;
+    padding: 30px 20px;
+
+}
+
+.Introduction p {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* -----------------------きっかけ------------------------ */
+.motivation,
+.thoughts {
+    max-width: 1300px;
+    margin: 0 auto 60px;
+    padding-bottom: 30px;
+}
+
+.motivation h2 {
+    padding: 30px 20px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.motivation article {
+    display: flex;
+}
+
+.img-container {
+    padding: 0 18px;
+}
+
+.img-container img {
+    width: 500px;
+}
+
+.img-container p {
+    font-size: 14px;
+    color: #444444;
+    padding: 8px 10px;
+}
+
+.img-container p span {
+    padding-left: 30px;
+}
+
+.motivation-text {
+    font-size: 20px;
+    padding-right: 18px;
+}
+
+.motivation-text span {
+    color: rgb(91, 166, 196);
+    font-weight: bolder;
+    text-shadow: 2px 1px 4px #d4f0ff;
+}
+
+
+/* ----------------------感想------------------------ */
+.thoughts h2 {
+    padding: 30px 20px;
+    font-size: 30px;
+    text-align: right;
+}
+
+.thoughts article {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.thoughts-text {
+    font-size: 20px;
+    padding-left: 18px;
+}
+
+.thoughts-text span {
+    font-weight: bolder;
+    text-shadow: 2px 1px 4px rgb(112, 110, 110);
+}
+
+
+/* -----------------------思い出------------------------ */
+.memory {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.memory h2 {
+    margin-top: 120px;
+    padding: 40px 0 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.memory>p {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0 60px;
+}
+
+.memory-img {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+}
+
+.memory-img article {
+    width: calc((100% - 32px) /3);
+    margin-bottom: 30px;
+    padding: 60px 18px 80px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.memory-img article img {
+    max-width: 100%;
+    min-height: 450px;
+}
+
+.memory-img article p {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+    /* 少し立体感 */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+/* -----------------------sns------------------------ */
+
+.sns {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px 30px;
+    display: flex;
+    /* ← テキストとアイコンを縦位置中央に揃える */
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.sns p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: black;
+    max-width: 750px;
+}
+
+.sns a {
+    font-size: 70px;
+    color: black;
+    transition: 0.3s;
+}
+
+.sns a:hover {
+    /* Instagram ピンクに変化 */
+    color: #e4405f;
+}
+
+
+/* --------------------------------------
+footer
+-------------------------------------- */
+footer{
+    width: 100%;
+    background-color: rgb(91, 166, 196);
+}
+
+footer small{
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+    letter-spacing: 4px;
+}
+
+
+
+/* ---------------------------------------------------
+スマホタブレットサイズ
+--------------------------------------------------- */
+@media(max-width:1200px) {
+
+    /* ---------------------------------
+header
+--------------------------------- */
+    header h1 {
+        padding: 36px;
+        font-size: 44px;
+    }
+
+    /* --------------------------------------
+main
+-------------------------------------- */
+    .Introduction p {
+        font-size: 18px;
+    }
+
+    /* -----------------------きっかけ------------------------ */
+    .motivation h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .motivation article {
+        flex-direction: column;
+    }
+
+    .img-container {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .motivation-text {
+        max-width: 900px;
+        display: block;
+        margin: 0 auto;
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    /* ----------------------感想------------------------ */
+    .thoughts h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .thoughts article {
+        flex-direction: column;
+    }
+
+    .thoughts-text {
+        max-width: 900px;
+        display: block;
+        margin: 0 auto;
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    /* -----------------------思い出------------------------ */
+    .memory h2 {
+        font-size: 28px;
+    }
+
+    .memory>p {
+        font-size: 18px;
+    }
+
+    .memory-img article {
+        width: calc((100% - 16px) /2);
+    }
+
+    .memory-img img {
+        min-height: 200px;
+    }
+
+    .memory-img p {
+        font-size: 28px;
+    }
+
+
+    /* -----------------------sns------------------------ */
+
+    .sns p {
+        font-size: 18px;
+    }
+
+    .sns a {
+        font-size: 60px;
+    }
+}
+
+@media(max-width:700px) {
+
+    /* --------------------------------------
+main
+-------------------------------------- */
+    /* --------きっかけ・感想-------- */
+    .img-container {
+        width: 100%;
+    }
+
+    .img-container img {
+        width: 100%;
+    }
+
+
+    /* -----------------------思い出------------------------ */
+    .memory-img article {
+        width: calc((100% - 0px) /1);
+    }
+
+
+    /* -----------------------sns------------------------ */
+
+    .sns {
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 30px 20px;
+        flex-direction: column;
+        border-radius: 0;
+        text-align: center;
+    }
+}
